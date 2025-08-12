@@ -1,0 +1,228 @@
+/* Home Section Base Styles */
+.home-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.home-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.home-text {
+  max-width: 600px;
+}
+
+/* Heading Styles - Blue Wintage */
+.home-text h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.brand {
+  color: #1976d2; /* Blue color like original */
+}
+
+/* First Paragraph - Larger & Green Color */
+.home-intro-large {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #4a7c28;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+/* Second Paragraph - Normal Size */
+.home-intro-normal {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 2.5rem;
+}
+
+/* Button Container */
+.home-buttons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Button Base Styles */
+.btn {
+  padding: 0.875rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  min-width: 150px;
+  text-align: center;
+}
+
+/* Primary Button - Our Products */
+.btn-primary {
+  background-color: #4a7c28;
+  color: white;
+  box-shadow: 0 4px 12px rgba(74, 124, 40, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #3a6020;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(74, 124, 40, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary Button - Learn More */
+.btn-secondary {
+  background-color: transparent;
+  color: #4a7c28;
+  border: 2px solid #4a7c28;
+}
+
+.btn-secondary:hover {
+  background-color: #4a7c28;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 124, 40, 0.3);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* Image Side - Seamless Background Integration */
+.home-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.wintage-main-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  transition: none !important;
+  display: block;
+  margin: 0;
+  padding: 0;
+  image-rendering: auto;
+}
+
+.wintage-main-image:hover,
+.wintage-main-image:focus,
+.wintage-main-image:active {
+  transform: none !important;
+  filter: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-section {
+    padding: 3rem 1rem;
+    min-height: 70vh;
+  }
+
+  .home-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .home-text {
+    max-width: 100%;
+  }
+
+  .home-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .home-intro-large {
+    font-size: 1.2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .home-intro-normal {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .home-buttons {
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    min-width: 140px;
+  }
+
+  .wintage-main-image {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-section {
+    padding: 2rem 0.75rem;
+  }
+
+  .home-content {
+    gap: 2rem;
+  }
+
+  .home-text h2 {
+    font-size: 1.75rem;
+  }
+
+  .home-intro-large {
+    font-size: 1.1rem;
+  }
+
+  .home-intro-normal {
+    font-size: 0.95rem;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .wintage-main-image {
+    max-height: 250px;
+  }
+}

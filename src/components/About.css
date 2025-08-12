@@ -1,0 +1,144 @@
+/* Add these CSS rules to your existing About.css file */
+
+/* Light Green Background for About Section */
+.about-section {
+  background-color: #f0f8f0; /* Light green background */
+  padding: 4rem 0;
+  min-height: 80vh;
+}
+
+/* Layout: Text Left, Image Right */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Larger Heading Size with Top Spacing - Targeting Correct Class */
+.about-title {
+  font-size: 2.5rem !important;
+  font-weight: bold !important;
+  margin-top: 2rem !important;
+  margin-bottom: 2.5rem !important;
+  color: #2d5016 !important; /* Deep green for prominence */
+}
+
+/* Enhanced Text Colors */
+.enhanced-text {
+  color: #2c3e50 !important; /* Dark navy for better contrast */
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.why-choose-section {
+  margin-top: 1rem;
+}
+
+.why-choose-title {
+  margin-bottom: 1rem;
+}
+
+/* Brand Highlights in Deep Green */
+.brand-highlight {
+  color: #2d5016; /* Deep green matching your theme */
+  font-weight: 500;
+}
+
+/* Enhanced Bullet Points */
+.enhanced-bullet {
+  color: #2c3e50 !important; /* Dark navy for better readability */
+  font-weight: 400;
+}
+
+/* Proper Checklist Alignment */
+.benefits-list {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0;
+}
+
+.benefit-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin-bottom: 1rem !important;
+  padding: 0 !important;
+}
+
+.checkmark {
+  margin-right: 0.75rem !important;
+  flex-shrink: 0 !important; /* Prevents checkmark from shrinking */
+  line-height: 1.6 !important; /* Aligns with text line height */
+}
+
+/* Responsive Image */
+.responsive-image {
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: 400px !important;
+  object-fit: contain !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  transition: none !important;
+}
+
+.responsive-image:hover {
+  transform: none !important;
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+/* About Image Container */
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .about-title {
+    font-size: 3rem !important;
+    margin-top: 1.5rem !important;
+  }
+
+  .responsive-image {
+    max-height: 300px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 3rem 0;
+  }
+
+  .about-content {
+    gap: 2rem;
+    padding: 0 0.75rem;
+  }
+
+  .about-title {
+    font-size: 2.5rem !important;
+    margin-top: 1rem !important;
+  }
+
+  .enhanced-text {
+    font-size: 1rem !important;
+  }
+
+  .responsive-image {
+    max-height: 250px !important;
+  }
+}
