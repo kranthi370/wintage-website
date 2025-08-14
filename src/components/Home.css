@@ -1,10 +1,11 @@
-/* Home Section Base Styles */
+/* Home Section Base Styles - IMPROVED */
 .home-section {
   min-height: 80vh;
   display: flex;
   align-items: center;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem 4rem 2rem; /* Added extra top padding for navbar spacing */
   background-color: #f8f9fa;
+  scroll-margin-top: 80px; /* Prevent overlap when scrolled to */
 }
 
 .home-content {
@@ -143,17 +144,19 @@
   background: transparent !important;
 }
 
-/* Responsive Design */
+/* Responsive Design - IMPROVED */
 @media (max-width: 768px) {
   .home-section {
-    padding: 3rem 1rem;
+    padding: 5rem 1rem 3rem 1rem; /* Adjusted for mobile navbar height */
     min-height: 70vh;
+    scroll-margin-top: 70px; /* Match mobile navbar height */
   }
 
   .home-content {
     grid-template-columns: 1fr;
     gap: 3rem;
     text-align: center;
+    justify-items: center; /* This centers the grid items including image */
   }
 
   .home-text {
@@ -188,16 +191,20 @@
 
   .wintage-main-image {
     max-height: 300px;
+    margin: 0 auto; /* Additional centering for the image */
+    display: block;
   }
 }
 
 @media (max-width: 480px) {
   .home-section {
-    padding: 2rem 0.75rem;
+    padding: 4rem 0.75rem 2rem 0.75rem; /* Adjusted for small mobile navbar */
+    scroll-margin-top: 65px; /* Match small mobile navbar height */
   }
 
   .home-content {
     gap: 2rem;
+    justify-items: center; /* Center items in small screens too */
   }
 
   .home-text h2 {
@@ -224,5 +231,7 @@
 
   .wintage-main-image {
     max-height: 250px;
+    margin: 0 auto; /* Ensure centering on small screens */
+    display: block;
   }
 }

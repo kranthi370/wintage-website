@@ -1,11 +1,12 @@
 /* Navbar Base Styles */
 .navbar {
-  background: linear-gradient(135deg, #2c5530, #4a7c59);;
+  background: linear-gradient(135deg, #2c5530, #4a7c59);
   padding: 1rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  height: 80px; /* Fixed height for consistent spacing */
 }
 
 .navbar-container {
@@ -15,6 +16,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
 }
 
 /* Logo/Brand Styles - Acts like a link */
@@ -23,13 +25,11 @@
   font-size: 1.8rem;
   font-weight: bold;
   cursor: pointer;
-  /* transition: all 0.3s ease; */
   user-select: none;
 }
 
 .navbar-brand:hover {
   color: #f0f0f0;
-  /* transform: scale(1.02); */
 }
 
 .navbar-brand:active {
@@ -90,8 +90,6 @@
   border-radius: 2px;
 }
 
-/* Remove glow animation */
-
 /* Mobile Menu Button (Hamburger) */
 .mobile-menu-btn {
   display: none;
@@ -135,8 +133,12 @@
   display: none;
 }
 
-/* Mobile Styles */
+/* Mobile Styles - IMPROVED */
 @media (max-width: 768px) {
+  .navbar {
+    height: 70px; /* Slightly smaller on mobile */
+  }
+
   .mobile-menu-btn {
     display: flex;
   }
@@ -151,30 +153,30 @@
     left: 0;
     width: 100%;
     height: auto;
-    min-height: 250px;
-    max-height: 320px;
+    min-height: 200px; /* Reduced from 250px */
+    max-height: 240px; /* Reduced from 320px */
     background: linear-gradient(180deg, #4a7c28 0%, #3a6020 100%);
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem; /* Reduced from 1.5rem */
     transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 999;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem; /* Reduced padding */
   }
 
   .navbar-menu.active {
-    top: 80px;
+    top: 70px; /* Match navbar height */
   }
 
   .navbar-link {
-    font-size: 1.2rem;
-    padding: 0.75rem 1.5rem;
-    width: 180px;
+    font-size: 1rem; /* Reduced from 1.2rem */
+    padding: 0.6rem 1.2rem; /* Reduced padding */
+    width: 160px; /* Reduced from 180px */
     text-align: center;
     border-radius: 8px;
-    margin: 0.3rem 0;
+    margin: 0.2rem 0; /* Reduced margin */
   }
 
   .navbar-link.active::after {
@@ -207,8 +209,12 @@
   }
 }
 
-/* Small Mobile Styles */
+/* Small Mobile Styles - IMPROVED */
 @media (max-width: 480px) {
+  .navbar {
+    height: 65px; /* Even smaller for small screens */
+  }
+
   .navbar-brand {
     font-size: 1.3rem;
   }
@@ -218,18 +224,18 @@
   }
 
   .navbar-menu {
-    min-height: 220px;
-    max-height: 280px;
-    padding: 1.5rem 1rem;
+    min-height: 180px; /* Reduced from 220px */
+    max-height: 200px; /* Reduced from 280px */
+    padding: 1.2rem 1rem; /* Reduced padding */
   }
 
   .navbar-menu.active {
-    top: 75px;
+    top: 65px; /* Match navbar height */
   }
 
   .navbar-link {
-    font-size: 1.1rem;
-    width: 160px;
-    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem; /* Reduced from 1.1rem */
+    width: 140px; /* Reduced from 160px */
+    padding: 0.5rem 1rem; /* Reduced padding */
   }
 }

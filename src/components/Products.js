@@ -182,28 +182,6 @@ function Products() {
       ]
     },
     {
-      id: 'cheese',
-      title: 'Cheese',
-      description: 'Processed cheese ideal for cooking, baking, and direct use.',
-      icon: '🧀',
-      fullDescription: 'Processed cheese ideal for cooking, baking, and direct use.',
-      uses: [
-        'Pizza & Pasta',
-        'Sandwiches, Gratin',
-        'Commercial Kitchens'
-      ],
-      features: [
-        'Great melting properties',
-        'Customizable cuts & shreds',
-        'Stretchy texture for food service'
-      ],
-      packaging: '200g blocks or slices',
-      images: [
-        '/images/cheese1.jpg',
-        '/images/cheese2.jpg'
-      ]
-    },
-    {
       id: 'yogurt',
       title: 'Yogurt',
       description: 'Smooth and naturally fermented yogurt, set or stirred.',
@@ -223,6 +201,28 @@ function Products() {
       images: [
         '/images/yogurt1.jpg',
         '/images/yogurt2.jpg'
+      ]
+    },
+    {
+      id: 'cheese',
+      title: 'Cheese',
+      description: 'Processed cheese ideal for cooking, baking, and direct use.',
+      icon: '🧀',
+      fullDescription: 'Processed cheese ideal for cooking, baking, and direct use.',
+      uses: [
+        'Pizza & Pasta',
+        'Sandwiches, Gratin',
+        'Commercial Kitchens'
+      ],
+      features: [
+        'Great melting properties',
+        'Customizable cuts & shreds',
+        'Stretchy texture for food service'
+      ],
+      packaging: '200g blocks or slices',
+      images: [
+        '/images/cheese1.jpg',
+        '/images/cheese2.jpg'
       ]
     }
   ];
