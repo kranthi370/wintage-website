@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Products.css';
 
 function Products() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [visibleProducts, setVisibleProducts] = useState(new Set());
+  const productRefs = useRef({});
 
   const products = [
     {
@@ -18,7 +20,7 @@ function Products() {
       ],
       features: [
         'No preservatives',
-        'Shelf life: 5 days',
+        'Shelf life: 5-7 days (chilled)',
         'Available in two variants'
       ],
       packaging: 'Full Cream Milk: 1L & 2L | Low Fat Milk: 1L & 2L',
@@ -39,7 +41,7 @@ function Products() {
       ],
       features: [
         'No preservatives',
-        'Shelf life: 5 days',
+        'Shelf life: 5-7 days (chilled)',
         'Available in two variants'
       ],
       packaging: 'Full Cream Milk: 1L & 2L | Low Fat Milk: 1L & 2L',
@@ -227,6 +229,33 @@ function Products() {
     }
   ];
 
+  // Intersection Observer for scroll animations
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const productId = entry.target.dataset.productId;
+          if (productId) {
+            setVisibleProducts(prev => new Set([...prev, productId]));
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe all product elements
+    Object.values(productRefs.current).forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Keyboard event listener
   useEffect(() => {
     const handleEscapeKey = (event) => {
       if (event.key === 'Escape') {
@@ -288,8 +317,14 @@ function Products() {
           </div>
 
           <div className="products-grid">
-            {products.map((product) => (
-              <div key={product.id} className="product-item">
+            {products.map((product, index) => (
+              <div 
+                key={product.id} 
+                className={`product-item ${visibleProducts.has(product.id) ? 'animate-in' : ''}`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+                data-product-id={product.id}
+                ref={el => productRefs.current[product.id] = el}
+              >
                 <div className="product-image-container">
                   <img 
                     src={product.images[0]} 
@@ -320,18 +355,20 @@ function Products() {
           </div>
         </div>
 
-        {/* Modal */}
+        {/* Enhanced Modal */}
         {selectedProduct && (
           <div className="modal" onClick={handleModalClick}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-              <span className="close" onClick={closeModal}>&times;</span>
+              <button className="close" onClick={closeModal}>&times;</button>
               
               <div className="modal-body">
                 <div className="modal-left">
                   <div className="image-container">
-                    <button className="nav-btn prev-btn" onClick={prevImage}>
-                      &#8249;
-                    </button>
+                    {selectedProduct.images.length > 1 && (
+                      <button className="nav-btn prev-btn" onClick={prevImage}>
+                        &#8249;
+                      </button>
+                    )}
                     <img 
                       src={selectedProduct.images[currentImageIndex]} 
                       alt={`${selectedProduct.title} ${currentImageIndex + 1}`}
@@ -344,9 +381,11 @@ function Products() {
                     <div className="image-placeholder" style={{display: 'none'}}>
                       <span className="placeholder-icon">{selectedProduct.icon}</span>
                     </div>
-                    <button className="nav-btn next-btn" onClick={nextImage}>
-                      &#8250;
-                    </button>
+                    {selectedProduct.images.length > 1 && (
+                      <button className="nav-btn next-btn" onClick={nextImage}>
+                        &#8250;
+                      </button>
+                    )}
                   </div>
                 </div>
 

@@ -24,7 +24,7 @@ function Contact() {
             <h3>Contact Information</h3>
             <div className="info-item">
               <strong>📍 Address:</strong>
-              <p>123 Dairy Lane, Fresh Valley, Secunderabad, Telangana 500001</p>
+              <p>D.No:368, Pedaparimi Village, Thulluru Mandal, Guntur District, Andhrapradesh, 522236</p>
             </div>
             <div className="info-item">
               <strong>📞 Phone:</strong>
@@ -34,9 +34,12 @@ function Contact() {
               <strong>✉️ Email:</strong>
               <p>wintage.nostalgia@gmail.com</p>
             </div>
-            <div className="info-item">
+            {/* <div className="info-item">
               <strong>🕒 Hours:</strong>
               <p>Mon-Sat: 6:00 AM - 8:00 PM<br />Sunday: 7:00 AM - 6:00 PM</p>
+            </div> */}
+            <div className="info-item">
+              <strong>Serving customers globally</strong>
             </div>
           </div>
           

@@ -71,7 +71,7 @@ class Footer extends Component {
             <h4>Connect With Us</h4>
             <div className="contact-info">
               <p>📞 +91 98765 43210</p>
-              <p>📧 info@wintagedairy.com</p>
+              <p>📧 wintage.nostalgia@gmail.com</p>
             </div>
             
             <div className="social-media">
