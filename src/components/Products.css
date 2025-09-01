@@ -411,24 +411,53 @@
   margin-bottom: 1.5rem;
 }
 
+/* FIXED: Better tick mark spacing for features and uses lists */
 .features-list, .uses-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .features-list li, .uses-list li {
-  padding: 0.5rem 0;
+  padding: 0.8rem 0 0.8rem 2rem; /* Increased left padding for tick mark space */
   border-bottom: 1px solid #eee;
   position: relative;
-  padding-left: 1.5rem;
+  line-height: 1.5;
+  word-wrap: break-word;
 }
 
 .features-list li:before, .uses-list li:before {
   content: "✓";
   position: absolute;
-  left: 0;
+  left: 0.5rem; /* Better positioning from left */
+  top: 0.8rem; /* Align with text baseline */
   color: #4a7c59;
   font-weight: bold;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Better spacing for uses and features items when using flex layout */
+.uses-item, .features-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px; /* Increased gap between icon and text */
+  padding: 0.6rem 0;
+  line-height: 1.5;
+}
+
+.checkmark-icon {
+  flex-shrink: 0;
+  margin-top: 2px; /* Better alignment */
+  width: 16px;
+  height: 16px;
+  color: #4a7c59;
+}
+
+.uses-item span, .features-item span {
+  flex: 1;
+  word-wrap: break-word;
+  font-size: 1rem;
 }
 
 .packaging-info {
@@ -492,7 +521,7 @@
   }
 }
 
-/* Mobile Responsive - OPTIMIZED */
+/* Mobile Responsive - FIXED IMAGE OVERLAPPING */
 @media (max-width: 768px) {
   .products-container {
     padding-top: 3rem;
@@ -500,23 +529,22 @@
   }
   
   .products-grid {
-    grid-template-columns: 1fr; /* Single column like Tirumala */
+    grid-template-columns: 1fr;
     gap: 3rem;
   }
   
   .product-item {
-    animation-duration: 0.3s; /* Faster for mobile performance */
+    animation-duration: 0.3s;
     max-width: 300px;
     margin: 0 auto;
   }
   
-  /* Reduced hover effects for mobile */
   .product-item:hover {
     transform: translateY(-3px);
   }
   
   .product-item:hover .product-item-image {
-    transform: scale(1.03); /* Reduced scale for mobile */
+    transform: scale(1.03);
   }
   
   .product-image-container {
@@ -524,35 +552,35 @@
     height: 180px;
   }
 
-  /* ENHANCED Mobile Modal - SIDS FARM STYLE */
+  /* FIXED: Mobile Modal Layout - Better Image/Content Balance */
   .modal-content {
     width: 92%;
     flex-direction: column;
-    max-height: 88vh;
+    max-height: 90vh; /* Increased to prevent cramping */
     border-radius: 20px;
-    margin: 6vh auto;
+    margin: 5vh auto;
   }
 
   .modal-body {
     flex-direction: column;
     height: auto;
-    max-height: calc(88vh - 60px);
+    max-height: calc(90vh - 60px);
   }
 
-  /* SIDS FARM STYLE: Compact Image Section */
+  /* FIXED: Reduced Image Section Height */
   .modal-left {
-    height: 45vh; /* Slightly larger for better balance */
-    min-height: 280px;
-    max-height: 350px;
+    height: 35vh; /* Reduced from 45vh to prevent overlap */
+    min-height: 220px; /* Reduced minimum */
+    max-height: 280px; /* Reduced maximum */
     flex-shrink: 0;
-    padding: 1rem; /* Add padding for better image fitting */
+    padding: 1rem;
     background: linear-gradient(135deg, #f8f9fa, #ffffff);
   }
 
-  /* IMPROVED: Better Image Fitting */
+  /* Better Image Fitting */
   .product-modal-image {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 90%;
+    max-height: 90%;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -566,11 +594,11 @@
     width: 100%;
   }
 
-  /* SIDS FARM STYLE: Optimized Content Section */
+  /* FIXED: Increased Content Section */
   .modal-right {
     flex: 1;
     min-height: 0;
-    max-height: 43vh; /* Balanced with image */
+    max-height: 55vh; /* Increased from 48vh */
     display: flex;
     flex-direction: column;
     background: white;
@@ -580,14 +608,15 @@
     padding: 1.2rem 1.5rem 0.8rem 1.5rem;
     flex-shrink: 0;
     background: white;
-    border-bottom: none;
+    border-bottom: 1px solid #eee;
   }
 
   .modal-title {
-    font-size: 1.5rem;
-    margin-bottom: 0.3rem;
+    font-size: 1.4rem; /* Slightly larger for better readability */
+    margin-bottom: 0.4rem;
     color: #2c5530;
     font-weight: 600;
+    line-height: 1.3;
   }
 
   .modal-size {
@@ -607,7 +636,7 @@
     font-size: 0.9rem;
   }
 
-  /* IMPROVED: Better Scrolling Content */
+  /* Better Scrolling Content */
   .modal-sections {
     padding: 1rem 1.5rem 1.5rem 1.5rem;
     flex: 1;
@@ -616,7 +645,6 @@
     background: white;
   }
 
-  /* Compact section styling */
   .modal-section {
     margin-bottom: 1.5rem;
   }
@@ -636,10 +664,36 @@
     padding-bottom: 0.3rem;
   }
 
+  /* FIXED: Better tick mark spacing for mobile */
   .features-list li, .uses-list li {
-    padding: 0.4rem 0;
+    padding: 0.5rem 0 0.5rem 2.2rem; /* More left padding */
     font-size: 0.9rem;
     border-bottom: 1px solid #f0f0f0;
+    line-height: 1.4;
+  }
+
+  .features-list li:before, .uses-list li:before {
+    left: 0.6rem; /* Better positioning */
+    top: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .uses-item, .features-item {
+    gap: 12px; /* Increased gap for mobile */
+    padding: 0.4rem 0;
+    line-height: 1.4;
+  }
+
+  .checkmark-icon {
+    margin-top: 3px;
+    width: 14px;
+    height: 14px;
+    color: #4a7c59;
+  }
+
+  .uses-item span, .features-item span {
+    font-size: 0.9rem;
+    line-height: 1.4;
   }
 
   .packaging-info {
@@ -675,13 +729,6 @@
     right: 15px;
     top: 15px;
   }
-
-  /* Better image sizing in modal */
-  .product-modal-image {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
-  }
 }
 
 /* Small Mobile - PERFORMANCE OPTIMIZED */
@@ -695,10 +742,9 @@
   }
   
   .product-item {
-    animation-duration: 0.25s; /* Even faster for small screens */
+    animation-duration: 0.25s;
   }
   
-  /* Minimal animations for performance */
   .product-item:hover {
     transform: translateY(-2px);
   }
@@ -707,29 +753,28 @@
     transform: scale(1.02);
   }
   
-  /* SIDS FARM STYLE: Small Mobile Optimization */
+  /* FIXED: Small Mobile Modal Optimization */
   .modal-content {
     width: 95%;
     margin: 2.5vh auto;
     border-radius: 16px;
-    max-height: 90vh;
+    max-height: 92vh; /* Increased */
   }
 
   .modal-body {
-    max-height: calc(90vh - 50px);
+    max-height: calc(92vh - 50px);
   }
 
-  /* COMPACT: Image Section */
+  /* FIXED: Better Image/Content Ratio */
   .modal-left {
-    height: 40vh; /* Balanced ratio */
-    min-height: 240px;
-    max-height: 300px;
+    height: 32vh; /* Further reduced */
+    min-height: 200px;
+    max-height: 250px;
     padding: 0.8rem;
   }
 
-  /* COMPACT: Content Section */
   .modal-right {
-    max-height: 50vh;
+    max-height: 60vh; /* Increased content area */
   }
 
   .modal-header {
@@ -742,6 +787,7 @@
 
   .modal-title {
     font-size: 1.3rem;
+    line-height: 1.2;
   }
 
   .modal-size {
@@ -772,18 +818,40 @@
     backdrop-filter: blur(10px);
   }
 
-  /* Better image container */
   .image-container {
     padding: 0.3rem;
   }
 
   .product-modal-image {
     box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    max-width: 85%;
+    max-height: 85%;
   }
 
   .product-image-container {
     max-width: 200px;
     height: 160px;
+  }
+
+  /* FIXED: Better tick marks for small mobile */
+  .features-list li, .uses-list li {
+    padding: 0.4rem 0 0.4rem 2rem;
+    font-size: 0.85rem;
+  }
+
+  .features-list li:before, .uses-list li:before {
+    left: 0.5rem;
+    top: 0.4rem;
+    font-size: 0.85rem;
+  }
+
+  .uses-item, .features-item {
+    gap: 10px;
+    padding: 0.3rem 0;
+  }
+
+  .uses-item span, .features-item span {
+    font-size: 0.85rem;
   }
 
   /* Better scrolling indicators */

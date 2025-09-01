@@ -11,9 +11,9 @@ function Products() {
     {
       id: 'fullcream-milk',
       title: 'Full Cream Milk',
-      description: 'Pasteurized milk available in two variants – rich and low fat – perfect for daily use.',
+      description: 'Rich, creamy texture with higher fat content. Best suited for tea, coffee, desserts, and recipes requring a fuller taste. Provides higher calories, ideal for growing children and people needing extra nutrition.',
       icon: '🥛',
-      fullDescription: 'Pasteurized milk available in two variants – rich and low fat – perfect for daily use.',
+      fullDescription: 'Rich, creamy texture with higher fat content. Best suited for tea, coffee, desserts, and recipes requring a fuller taste. Provides higher calories, ideal for growing children and people needing extra nutrition.',
       uses: [
         'Beverages, Cooking, Smoothies',
         'Daily Nutritional Intake'
@@ -23,7 +23,7 @@ function Products() {
         'Shelf life: 5-7 days (chilled)',
         'Available in two variants'
       ],
-      packaging: 'Full Cream Milk: 1L & 2L | Low Fat Milk: 1L & 2L',
+      packaging: 'Full Cream Milk: 1L & 2L',
       images: [
         '/images/fullcream-milk1.jpg',
         '/images/fullcream-milk2.jpg'
@@ -32,9 +32,9 @@ function Products() {
     {
       id: 'lowfat-milk',
       title: 'Low Fat Milk',
-      description: 'Pasteurized milk available in two variants – rich and low fat – perfect for daily use.',
+      description: 'Contains reduced fat content, making it lighter and healthier for everyday use. Suitable for weight conscious consumers or those on low-fat diet. Retains essential nutrients while offering a lighter taste.',
       icon: '🥛',
-      fullDescription: 'Pasteurized milk available in two variants – rich and low fat – perfect for daily use.',
+      fullDescription: 'Contains reduced fat content, making it lighter and healthier for everyday use. Suitable for weight conscious consumers or those on low-fat diet. Retains essential nutrients while offering a lighter taste.',
       uses: [
         'Beverages, Cooking, Smoothies',
         'Daily Nutritional Intake'
@@ -44,7 +44,7 @@ function Products() {
         'Shelf life: 5-7 days (chilled)',
         'Available in two variants'
       ],
-      packaging: 'Full Cream Milk: 1L & 2L | Low Fat Milk: 1L & 2L',
+      packaging: 'Low Fat Milk: 1L & 2L',
       images: [
         '/images/lowfat-milk1.jpg',
         '/images/lowfat-milk2.jpg'
@@ -53,9 +53,9 @@ function Products() {
     {
       id: 'fullcream-powder',
       title: 'Full Cream Milk Powder',
-      description: 'Whole milk powder with rich fat content for enhanced flavor and texture.',
+      description: 'Made from whole milk with rich fat content. Provides creamy flavor and smooth texture, great for tea, coffee, desserts, and ice cream mixes. Excellent for domestic and foodservice use where richness is desired.',
       icon: '🍼',
-      fullDescription: 'Whole milk powder with rich fat content for enhanced flavor and texture.',
+      fullDescription: 'Made from whole milk with rich fat content. Provides creamy flavor and smooth texture, great for tea, coffee, desserts, and ice cream mixes. Excellent for domestic and foodservice use where richness is desired.',
       uses: [
         'Tea, Coffee',
         'Desserts, Ice Cream',
@@ -75,9 +75,9 @@ function Products() {
     {
       id: 'skim-powder',
       title: 'Skim Milk Powder',
-      description: 'Low-fat, high-protein milk powder suitable for health-focused diets and industrial use.',
+      description: 'Low in fat but high in protein, ideal for health-conscious diets. Best for beverages, bakery, confectionery, and nutritional products. Longer shlef life and easy solubility in hot and cold liquids.',
       icon: '🥛',
-      fullDescription: 'Low-fat, high-protein milk powder suitable for health-focused diets and industrial use.',
+      fullDescription: 'Low in fat but high in protein, ideal for health-conscious diets. Best for beverages, bakery, confectionery, and nutritional products. Longer shlef life and easy solubility in hot and cold liquids.',
       uses: [
         'Hot/Cold Beverages',
         'Confectionery & Baking',
